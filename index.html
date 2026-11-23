@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding Invitation | Gisser & Marialyn</title>
+  
+  <!-- Google Fonts: Luxury Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Fullscreen Responsive Couple Background (Fits Any Device) -->
+  <div class="scene-bg-wrapper" aria-hidden="true">
+    <img src="couple.jpg" alt="Gisser & Marialyn" class="scene-bg-img">
+    <div class="scene-bg-overlay"></div>
+  </div>
+
+  <!-- Ambient Golden Floating Dust Particles -->
+  <canvas id="ambient-canvas"></canvas>
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Ambient Sound Control -->
+  <button id="sound-btn" class="sound-toggle" aria-label="Toggle Sound">
+    <i class="fa-solid fa-volume-high"></i>
+    <span class="sound-tooltip">Sound On</span>
+  </button>
+
+  <!-- Main Experience Wrapper -->
+  <main class="scene-container">
+    
+    <!-- Stage: Holds Envelope and Unfolded Card -->
+    <div class="stage" id="stage">
+      
+      <!-- Editorial Landing Header (Matches reference photo) -->
+      <header class="landing-header" id="landing-header">
+        <p class="landing-pretitle">TOGETHER WITH THEIR FAMILIES</p>
+        <h1 class="landing-names">Gisser &amp; Marialyn</h1>
+      </header>
+
+      <!-- Envelope Component -->
+      <div class="envelope-wrapper" id="envelope-wrapper">
+
+        <!-- Left Botanical Floral Spray (Baby's Breath & Dusty Blue Hydrangeas) -->
+        <div class="floral-spray floral-spray-left" aria-hidden="true">
+          <svg viewBox="0 0 160 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="leafGradLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#8fa693" />
+                <stop offset="50%" stop-color="#738b77" />
+                <stop offset="100%" stop-color="#5a705e" />
+              </linearGradient>
+              <linearGradient id="hydrangeaGradLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#d6e5f3" />
+                <stop offset="50%" stop-color="#a4bfd8" />
+                <stop offset="100%" stop-color="#7f9db8" />
+              </linearGradient>
+              <filter id="flDropLeft" x="-10%" y="-10%" width="130%" height="130%">
+                <feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.12" />
+              </filter>
+            </defs>
+            <g filter="url(#flDropLeft)">
+              <!-- Eucalyptus Stems -->
+              <path d="M140 220 C110 180 80 130 50 60" stroke="#708674" stroke-width="2.2" stroke-linecap="round" />
+              <path d="M120 170 C95 140 65 110 35 70" stroke="#708674" stroke-width="1.8" stroke-linecap="round" />
+              <path d="M90 120 C70 95 45 60 20 25" stroke="#708674" stroke-width="1.6" stroke-linecap="round" />
+              
+              <!-- Eucalyptus Leaves -->
+              <ellipse cx="48" cy="58" rx="14" ry="9" transform="rotate(-35 48 58)" fill="url(#leafGradLeft)" />
+              <ellipse cx="68" cy="100" rx="16" ry="10" transform="rotate(-40 68 100)" fill="url(#leafGradLeft)" />
+              <ellipse cx="98" cy="145" rx="17" ry="11" transform="rotate(-30 98 145)" fill="url(#leafGradLeft)" />
+              <ellipse cx="32" cy="72" rx="13" ry="8" transform="rotate(-50 32 72)" fill="url(#leafGradLeft)" opacity="0.9" />
+              <ellipse cx="18" cy="25" rx="11" ry="7" transform="rotate(-25 18 25)" fill="url(#leafGradLeft)" />
+
+              <!-- Dusty Blue Hydrangea Florets -->
+              <!-- Cluster 1 -->
+              <g transform="translate(65, 80)">
+                <path d="M0 -7 C3 -3 3 3 0 7 C-3 3 -3 -3 0 -7Z" fill="url(#hydrangeaGradLeft)" />
+                <path d="M-7 0 C-3 3 3 3 7 0 C3 -3 -3 -3 -7 0Z" fill="url(#hydrangeaGradLeft)" />
+                <circle cx="0" cy="0" r="1.5" fill="#fdfcf8" />
+              </g>
+              <g transform="translate(80, 70)">
+                <path d="M0 -6 C2.5 -2.5 2.5 2.5 0 6 C-2.5 2.5 -2.5 -2.5 0 -6Z" fill="url(#hydrangeaGradLeft)" />
+                <path d="M-6 0 C-2.5 2.5 2.5 2.5 6 0 C2.5 -2.5 -2.5 -2.5 -6 0Z" fill="url(#hydrangeaGradLeft)" />
+                <circle cx="0" cy="0" r="1.3" fill="#fdfcf8" />
+              </g>
+              <g transform="translate(52, 95)">
+                <path d="M0 -7 C3 -3 3 3 0 7 C-3 3 -3 -3 0 -7Z" fill="url(#hydrangeaGradLeft)" />
+                <path d="M-7 0 C-3 3 3 3 7 0 C3 -3 -3 -3 -7 0Z" fill="url(#hydrangeaGradLeft)" />
+                <circle cx="0" cy="0" r="1.4" fill="#fdfcf8" />
+              </g>
+
+              <!-- Cluster 2 (Lower) -->
+              <g transform="translate(85, 125)">
+                <path d="M0 -7.5 C3.2 -3 3.2 3 0 7.5 C-3.2 3 -3.2 -3 0 -7.5Z" fill="url(#hydrangeaGradLeft)" />
+                <path d="M-7.5 0 C-3 3.2 3 3.2 7.5 0 C3 -3.2 -3 -3.2 -7.5 0Z" fill="url(#hydrangeaGradLeft)" />
+                <circle cx="0" cy="0" r="1.5" fill="#fdfcf8" />
+              </g>
+              <g transform="translate(102, 115)">
+                <path d="M0 -6 C2.6 -2.5 2.6 2.5 0 6 C-2.6 2.5 -2.6 -2.5 0 -6Z" fill="url(#hydrangeaGradLeft)" />
+                <path d="M-6 0 C-2.5 2.6 2.5 2.6 6 0 C2.6 -2.5 -2.5 -2.5 -6 0Z" fill="url(#hydrangeaGradLeft)" />
+                <circle cx="0" cy="0" r="1.3" fill="#fdfcf8" />
+              </g>
+
+              <!-- Baby's Breath Florets (White Pearls on Fine Sprigs) -->
+              <path d="M80 50 L95 35 M85 45 L75 25 M90 40 L105 28 M60 70 L48 55 M55 65 L40 48" stroke="#859c89" stroke-width="1.2" />
+              <circle cx="95" cy="35" r="3.2" fill="#ffffff" filter="drop-shadow(0 1px 2px rgba(0,0,0,0.12))" />
+              <circle cx="75" cy="25" r="2.8" fill="#ffffff" filter="drop-shadow(0 1px 2px rgba(0,0,0,0.12))" />
+              <circle cx="105" cy="28" r="3" fill="#fbfaf6" filter="drop-shadow(0 1px 2px rgba(0,0,0,0.12))" />
+              <circle cx="48" cy="55" r="3.1" fill="#ffffff" filter="drop-shadow(0 1px 2px rgba(0,0,0,0.12))" />
+              <circle cx="40" cy="48" r="2.7" fill="#ffffff" filter="drop-shadow(0 1px 2px rgba(0,0,0,0.12))" />
+              <circle cx="62" cy="38" r="2.9" fill="#faf8f2" filter="drop-shadow(0 1px 2px rgba(0,0,0,0.12))" />
+              <circle cx="112" cy="40" r="2.8" fill="#ffffff" filter="drop-shadow(0 1px 2px rgba(0,0,0,0.12))" />
+              <circle cx="88" cy="20" r="2.6" fill="#fdfcf8" filter="drop-shadow(0 1px 2px rgba(0,0,0,0.12))" />
+
+              <!-- Soft White Accent Rosebud -->
+              <g transform="translate(105, 85)">
+                <ellipse cx="0" cy="0" rx="9" ry="12" fill="#ffffff" transform="rotate(-15)" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.1))" />
+                <path d="M-6 2 C-2 -6 5 -5 7 1 C4 4 -2 5 -6 2Z" fill="#f5f0e6" />
+                <path d="M-3 -4 C0 -9 4 -7 5 -3" fill="#ece5d5" />
+              </g>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Right Botanical Floral Spray (Lush Bridal Bouquet: Garden Rose, Baby's Breath & Dusty Blue Hydrangeas) -->
+        <div class="floral-spray floral-spray-right" aria-hidden="true">
+          <svg viewBox="0 0 220 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="leafGradRight" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#93aa97" />
+                <stop offset="50%" stop-color="#768f7b" />
+                <stop offset="100%" stop-color="#586f5d" />
+              </linearGradient>
+              <linearGradient id="hydrangeaGradRight" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#dce8f4" />
+                <stop offset="50%" stop-color="#a2bed7" />
+                <stop offset="100%" stop-color="#7a9ab5" />
+              </linearGradient>
+              <linearGradient id="rosePetalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ffffff" />
+                <stop offset="70%" stop-color="#f8f5ee" />
+                <stop offset="100%" stop-color="#ede7db" />
+              </linearGradient>
+              <linearGradient id="roseCenterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#fdfcf9" />
+                <stop offset="60%" stop-color="#faeed9" />
+                <stop offset="100%" stop-color="#e9dac4" />
+              </linearGradient>
+              <filter id="flDropRight" x="-10%" y="-10%" width="130%" height="130%">
+                <feDropShadow dx="1" dy="4" stdDeviation="4" flood-opacity="0.14" />
+              </filter>
+            </defs>
+            <g filter="url(#flDropRight)">
+              <!-- Main Cascading Foliage Stems -->
+              <path d="M40 30 C75 80 110 160 125 280 C130 320 120 350 110 370" stroke="#687e6b" stroke-width="2.4" stroke-linecap="round" />
+              <path d="M60 70 C95 120 135 180 155 240" stroke="#718875" stroke-width="1.8" stroke-linecap="round" />
+              <path d="M80 120 C120 160 160 210 180 270" stroke="#7b927f" stroke-width="1.6" stroke-linecap="round" />
+              
+              <!-- Eucalyptus Foliage Leaves -->
+              <ellipse cx="65" cy="50" rx="16" ry="11" transform="rotate(35 65 50)" fill="url(#leafGradRight)" />
+              <ellipse cx="98" cy="90" rx="18" ry="12" transform="rotate(25 98 90)" fill="url(#leafGradRight)" />
+              <ellipse cx="132" cy="150" rx="19" ry="12" transform="rotate(35 132 150)" fill="url(#leafGradRight)" />
+              <ellipse cx="148" cy="210" rx="17" ry="11" transform="rotate(20 148 210)" fill="url(#leafGradRight)" />
+              <ellipse cx="140" cy="275" rx="16" ry="10" transform="rotate(15 140 275)" fill="url(#leafGradRight)" />
+              <ellipse cx="120" cy="335" rx="14" ry="9" transform="rotate(10 120 335)" fill="url(#leafGradRight)" />
+              <ellipse cx="105" cy="365" rx="11" ry="7" transform="rotate(-5 105 365)" fill="url(#leafGradRight)" />
+              
+              <!-- Back Sprigs of Baby's Breath -->
+              <path d="M45 40 L30 15 M40 30 L55 10 M50 25 L65 5 M85 75 L105 50 M95 65 L115 45 M105 85 L130 65" stroke="#879e8c" stroke-width="1.3" />
+              <circle cx="30" cy="15" r="3.4" fill="#ffffff" filter="drop-shadow(0 1px 2px rgba(0,0,0,0.12))" />
+              <circle cx="55" cy="10" r="3.1" fill="#fdfcf8" filter="drop-shadow(0 1px 2px rgba(0,0,0,0.12))" />
+              <circle cx="65" cy="5" r="2.9" fill="#ffffff" filter="drop-shadow(0 1px 2px rgba(0,0,0,0.12))" />
+              <circle cx="105" cy="50" r="3.3" fill="#ffffff" filter="drop-shadow(0 1px 2px rgba(0,0,0,0.12))" />
+              <circle cx="115" cy="45" r="3" fill="#fefdfa" filter="drop-shadow(0 1px 2px rgba(0,0,0,0.12))" />
+              <circle cx="130" cy="65" r="3.5" fill="#ffffff" filter="drop-shadow(0 1px 2px rgba(0,0,0,0.12))" />
+
+              <!-- Dusty Blue Hydrangeas Cluster (Upper Right) -->
+              <g transform="translate(100, 75)">
+                <path d="M0 -8 C3.5 -3.5 3.5 3.5 0 8 C-3.5 3.5 -3.5 -3.5 0 -8Z" fill="url(#hydrangeaGradRight)" />
+                <path d="M-8 0 C-3.5 3.5 3.5 3.5 8 0 C3.5 -3.5 -3.5 -3.5 -8 0Z" fill="url(#hydrangeaGradRight)" />
+                <circle cx="0" cy="0" r="1.6" fill="#fdfcf8" />
+              </g>
+              <g transform="translate(118, 62)">
+                <path d="M0 -7 C3 -3 3 3 0 7 C-3 3 -3 -3 0 -7Z" fill="url(#hydrangeaGradRight)" />
+                <path d="M-7 0 C-3 3 3 3 7 0 C3 -3 -3 -3 -7 0Z" fill="url(#hydrangeaGradRight)" />
+                <circle cx="0" cy="0" r="1.4" fill="#fdfcf8" />
+              </g>
+              <g transform="translate(85, 95)">
+                <path d="M0 -7.5 C3.2 -3.2 3.2 3.2 0 7.5 C-3.2 3.2 -3.2 -3.2 0 -7.5Z" fill="url(#hydrangeaGradRight)" />
+                <path d="M-7.5 0 C-3.2 3.2 3.2 3.2 7.5 0 C3.2 -3.2 -3.2 -3.2 -7.5 0Z" fill="url(#hydrangeaGradRight)" />
+                <circle cx="0" cy="0" r="1.5" fill="#fdfcf8" />
+              </g>
+              <g transform="translate(115, 98)">
+                <path d="M0 -8 C3.5 -3.5 3.5 3.5 0 8 C-3.5 3.5 -3.5 -3.5 0 -8Z" fill="url(#hydrangeaGradRight)" />
+                <path d="M-8 0 C-3.5 3.5 3.5 3.5 8 0 C3.5 -3.5 -3.5 -3.5 -8 0Z" fill="url(#hydrangeaGradRight)" />
+                <circle cx="0" cy="0" r="1.6" fill="#fdfcf8" />
+              </g>
+
+              <!-- Lush Full White Garden Rose (The Showstopper in the Reference Photo) -->
+              <g transform="translate(68, 120)">
+                <!-- Outer Calyx & Base Shadows -->
+                <circle cx="0" cy="0" r="36" fill="#f1ece2" opacity="0.8" filter="drop-shadow(0 4px 8px rgba(0,0,0,0.12))" />
+                
+                <!-- Outer Petals Layer 1 -->
+                <path d="M-34 0 C-34 -20 -15 -35 0 -35 C15 -35 34 -20 34 0 C34 20 15 35 0 35 C-15 35 -34 20 -34 0Z" fill="url(#rosePetalGrad)" />
+                <path d="M-28 -18 C-12 -34 16 -32 28 -16 C38 4 22 30 0 32 C-22 30 -36 8 -28 -18Z" fill="#ffffff" />
+                
+                <!-- Mid Petals Layer 2 -->
+                <path d="M-22 -10 C-18 -26 12 -26 22 -10 C30 8 10 24 -2 24 C-18 24 -28 4 -22 -10Z" fill="url(#rosePetalGrad)" />
+                <path d="M-16 -16 C-2 -24 16 -18 20 -4 C22 14 0 20 -10 16 C-20 10 -22 -4 -16 -16Z" fill="#ffffff" />
+                
+                <!-- Inner Cupped Petals Layer 3 -->
+                <path d="M-12 -6 C-6 -18 12 -16 14 -4 C16 8 2 14 -6 12 C-14 8 -16 0 -12 -6Z" fill="url(#roseCenterGrad)" />
+                <path d="M-8 -2 C-3 -10 9 -9 10 -1 C11 7 1 11 -4 9 C-9 6 -11 2 -8 -2Z" fill="#f8edd8" />
+                
+                <!-- Center Bud Core Spiral -->
+                <path d="M-4 0 C-1 -5 5 -4 5 1 C5 5 0 7 -3 5 C-6 3 -6 1 -4 0Z" fill="#edd9be" />
+                <path d="M-2 1 C0 -2 3 -2 3 1 C3 3 1 4 -1 3Z" fill="#dfc6a6" />
+              </g>
+
+              <!-- Secondary Garden Rosebud (Lower) -->
+              <g transform="translate(100, 185)">
+                <ellipse cx="0" cy="0" rx="20" ry="18" fill="url(#rosePetalGrad)" transform="rotate(20)" filter="drop-shadow(0 3px 6px rgba(0,0,0,0.1))" />
+                <path d="M-12 -4 C-6 -16 12 -14 14 -2 C16 10 0 16 -8 12 C-16 8 -16 2 -12 -4Z" fill="#ffffff" />
+                <path d="M-6 -2 C-2 -10 8 -8 9 0 C10 8 0 11 -5 9 C-10 6 -10 2 -6 -2Z" fill="url(#roseCenterGrad)" />
+                <path d="M-2 0 C0 -5 5 -4 5 1 C5 4 1 6 -2 5Z" fill="#e9d8be" />
+              </g>
+
+              <!-- Lower Dusty Blue Hydrangea Cluster -->
+              <g transform="translate(115, 230)">
+                <path d="M0 -7 C3 -3 3 3 0 7 C-3 3 -3 -3 0 -7Z" fill="url(#hydrangeaGradRight)" />
+                <path d="M-7 0 C-3 3 3 3 7 0 C3 -3 -3 -3 -7 0Z" fill="url(#hydrangeaGradRight)" />
+                <circle cx="0" cy="0" r="1.4" fill="#fdfcf8" />
+              </g>
+              <g transform="translate(132, 220)">
+                <path d="M0 -6 C2.6 -2.6 2.6 2.6 0 6 C-2.6 2.6 -2.6 -2.6 0 -6Z" fill="url(#hydrangeaGradRight)" />
+                <path d="M-6 0 C-2.6 2.6 2.6 2.6 6 0 C2.6 -2.6 -2.6 -2.6 -6 0Z" fill="url(#hydrangeaGradRight)" />
+                <circle cx="0" cy="0" r="1.2" fill="#fdfcf8" />
+              </g>
+              <g transform="translate(105, 250)">
+                <path d="M0 -6.5 C2.8 -2.8 2.8 2.8 0 6.5 C-2.8 2.8 -2.8 -2.8 0 -6.5Z" fill="url(#hydrangeaGradRight)" />
+                <path d="M-6.5 0 C-2.8 2.8 2.8 2.8 6.5 0 C2.8 -2.8 -2.8 -2.8 -6.5 0Z" fill="url(#hydrangeaGradRight)" />
+                <circle cx="0" cy="0" r="1.3" fill="#fdfcf8" />
+              </g>
+
+              <!-- Cascading Baby's Breath Clouds (Trailing Downwards) -->
+              <path d="M90 200 L75 220 M85 210 L70 235 M115 260 L100 285 M125 270 L115 300 M110 310 L95 330 M120 325 L108 350 M105 345 L95 365" stroke="#7e9582" stroke-width="1.2" />
+              <circle cx="75" cy="220" r="3.2" fill="#ffffff" filter="drop-shadow(0 1px 2px rgba(0,0,0,0.1))" />
+              <circle cx="70" cy="235" r="2.8" fill="#fbfaf6" filter="drop-shadow(0 1px 2px rgba(0,0,0,0.1))" />
+              <circle cx="100" cy="285" r="3" fill="#ffffff" filter="drop-shadow(0 1px 2px rgba(0,0,0,0.1))" />
+              <circle cx="115" cy="300" r="2.7" fill="#ffffff" filter="drop-shadow(0 1px 2px rgba(0,0,0,0.1))" />
+              <circle cx="95" cy="330" r="2.9" fill="#fcfbf7" filter="drop-shadow(0 1px 2px rgba(0,0,0,0.1))" />
+              <circle cx="108" cy="350" r="2.6" fill="#ffffff" filter="drop-shadow(0 1px 2px rgba(0,0,0,0.1))" />
+              <circle cx="95" cy="365" r="2.4" fill="#ffffff" filter="drop-shadow(0 1px 2px rgba(0,0,0,0.1))" />
+            </g>
+          </svg>
+        </div>
+
+        <div class="envelope" id="envelope">
+          
+          <!-- Back Interior of Envelope (Photo Lining) -->
+          <div class="envelope-back">
+            <img src="couple.jpg" alt="Gisser & Marialyn" class="envelope-liner-img">
+            <div class="envelope-liner-overlay"></div>
+            <div class="inner-foil-pattern"></div>
+          </div>
+
+          <!-- The Invitation Letter (Slides out) -->
+          <article class="invitation-card" id="invitation-card">
+            
+            <!-- Metallic Foil Ornate Border -->
+            <div class="card-border-ornament">
+              <div class="corner-ornament top-left"></div>
+              <div class="corner-ornament top-right"></div>
+              <div class="corner-ornament bottom-left"></div>
+              <div class="corner-ornament bottom-right"></div>
+            </div>
+
+            <!-- Card Content -->
+            <div class="card-inner">
+              
+              <!-- Monogram Seal -->
+              <div class="crest-container">
+                <div class="crest-ring">
+                  <span class="crest-monogram">G & M</span>
+                </div>
+              </div>
+
+              <!-- Couple Portrait Photo in Card -->
+              <div class="card-portrait-wrapper">
+                <div class="card-portrait-ring">
+                  <img src="couple.jpg" alt="Gisser & Marialyn" class="card-portrait-img">
+                </div>
+              </div>
+
+              <!-- Scripture Verse -->
+              <div class="scripture-box">
+                <p class="scripture-text">&ldquo;What therefore God hath joined together, let not man put asunder.&rdquo;</p>
+                <p class="scripture-cite">&mdash; Mark 10:9 &mdash;</p>
+              </div>
+
+              <p class="invite-header">TOGETHER WITH THEIR PARENTS</p>
+              
+              <!-- Couple's Names in Gilded Metallic Foil -->
+              <h1 class="couple-names">
+                <span class="first-name">Gisser H. Buscado</span>
+                <span class="ampersand">&</span>
+                <span class="first-name">Marialyn P. Barquin</span>
+              </h1>
+
+              <p class="invite-subtext">
+                REQUEST THE HONOR OF YOUR PRESENCE AND BLESSINGS<br>
+                AT THE CELEBRATION OF THEIR HOLY MATRIMONY
+              </p>
+
+              <!-- Date Badge -->
+              <div class="event-date-badge">
+                <div class="badge-line"></div>
+                <div class="badge-content">
+                  <span class="badge-day">TUESDAY</span>
+                  <span class="badge-full-date">December 22, 2026</span>
+                  <span class="badge-time">9:00 AM TO 1:00 PM</span>
+                </div>
+                <div class="badge-line"></div>
+              </div>
+
+              <!-- Venue Details -->
+              <div class="venue-info">
+                <span class="venue-tag"><i class="fa-solid fa-champagne-glasses"></i> RECEPTION VENUE</span>
+                <p class="venue-title">Brgy. II Palampas, San Carlos City</p>
+                <p class="venue-address">Beside of NWTF Dungganon Branch</p>
+              </div>
+
+              <!-- Countdown Timer -->
+              <div class="countdown-wrapper">
+                <p class="countdown-title">COUNTING DOWN TO OUR FOREVER</p>
+                <div class="countdown-timer" id="countdown">
+                  <div class="time-box">
+                    <span class="time-val" id="days">000</span>
+                    <span class="time-label">Days</span>
+                  </div>
+                  <span class="time-sep">:</span>
+                  <div class="time-box">
+                    <span class="time-val" id="hours">00</span>
+                    <span class="time-label">Hours</span>
+                  </div>
+                  <span class="time-sep">:</span>
+                  <div class="time-box">
+                    <span class="time-val" id="mins">00</span>
+                    <span class="time-label">Mins</span>
+                  </div>
+                  <span class="time-sep">:</span>
+                  <div class="time-box">
+                    <span class="time-val" id="secs">00</span>
+                    <span class="time-label">Secs</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Interactive Actions -->
+              <div class="card-actions">
+                <button class="btn btn-gold" id="open-rsvp-btn">
+                  <i class="fa-regular fa-envelope"></i>
+                  <span>RSVP NOW</span>
+                </button>
+                <button class="btn btn-outline" id="calendar-btn">
+                  <i class="fa-regular fa-calendar-plus"></i>
+                  <span>Add to Calendar</span>
+                </button>
+                <button class="btn btn-outline" id="location-btn">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <span>Location</span>
+                </button>
+                <button class="btn btn-outline" id="share-btn" title="Copy invitation link">
+                  <i class="fa-solid fa-share-nodes"></i>
+                  <span>Share</span>
+                </button>
+              </div>
+
+              <!-- Ornate Filigree Divider -->
+              <div class="ornate-divider">
+                <span class="divider-line"></span>
+                <span class="divider-icon">❦</span>
+                <span class="divider-line"></span>
+              </div>
+
+              <!-- Wedding Entourage & Sponsors Section -->
+              <section class="wedding-entourage" aria-label="Wedding Entourage and Sponsors">
+                <h2 class="entourage-main-title">THE WEDDING ENTOURAGE</h2>
+                <p class="entourage-subtitle">Standing witness as two lives become one</p>
+
+                <!-- Parents Section -->
+                <div class="entourage-block">
+                  <h3 class="entourage-heading"><i class="fa-solid fa-heart"></i> PARENTS</h3>
+                  <div class="two-col-grid">
+                    <div class="entourage-col">
+                      <span class="role-badge">Parents of the Groom</span>
+                      <ul class="names-list">
+                        <li>Lucy H. Buscado</li>
+                        <li>Venancio Himongala</li>
+                      </ul>
+                    </div>
+                    <div class="entourage-col">
+                      <span class="role-badge">Parents of the Bride</span>
+                      <ul class="names-list">
+                        <li>Cristuto F. Barquin</li>
+                        <li>Mary Jane P. Barquin</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Best Man & Maid of Honor -->
+                <div class="entourage-block">
+                  <div class="two-col-grid honor-grid">
+                    <div class="entourage-col honor-card">
+                      <span class="role-badge"><i class="fa-solid fa-user-tie"></i> Best Man</span>
+                      <p class="honoree-name">Gedeon H. Buscado</p>
+                    </div>
+                    <div class="entourage-col honor-card">
+                      <span class="role-badge"><i class="fa-solid fa-gem"></i> Maid of Honor</span>
+                      <p class="honoree-name">Cristine P. Barquin</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Groomsmen & Bridesmaids -->
+                <div class="entourage-block">
+                  <div class="two-col-grid">
+                    <div class="entourage-col">
+                      <span class="role-badge">Groomsmen</span>
+                      <ol class="numbered-list">
+                        <li>Amos Arellano</li>
+                        <li>Melvin Pila</li>
+                        <li>Mark Louie Recablanca</li>
+                        <li>James Buscado</li>
+                      </ol>
+                    </div>
+                    <div class="entourage-col">
+                      <span class="role-badge">Bridesmaids</span>
+                      <ol class="numbered-list">
+                        <li>Mary Ann Barquin</li>
+                        <li>Omega Arellano</li>
+                        <li>Xyla Marie Caramihan</li>
+                        <li>Nicole Joy Sabandal</li>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Principal Sponsors -->
+                <div class="entourage-block sponsors-block">
+                  <h3 class="entourage-heading"><i class="fa-solid fa-crown"></i> PRINCIPAL SPONSORS</h3>
+                  <p class="sponsors-caption">Guiding our union with love, wisdom, and blessings</p>
+                  
+                  <div class="two-col-grid sponsors-grid">
+                    <!-- Male Principal Sponsors -->
+                    <div class="entourage-col">
+                      <span class="role-badge male-badge">Male Sponsors</span>
+                      <ol class="sponsors-list">
+                        <li><span class="sp-num">1.</span> <span class="sp-name">Ceriaco M. Deni-ay</span></li>
+                        <li><span class="sp-num">2.</span> <span class="sp-name">Dennis V. Lopez</span></li>
+                        <li><span class="sp-num">3.</span> <span class="sp-name">Cornelio C. Guadalupe</span></li>
+                        <li><span class="sp-num">4.</span> <span class="sp-name">Arny Mahusay</span></li>
+                        <li><span class="sp-num">5.</span> <span class="sp-name">Isabelo Ricablanca</span></li>
+                        <li><span class="sp-num">6.</span> <span class="sp-name">Reynaldo P. Dela Cruz</span></li>
+                        <li><span class="sp-num">7.</span> <span class="sp-name">Ronald V. Tequil</span></li>
+                        <li><span class="sp-num">8.</span> <span class="sp-name">Jonathan Verania</span></li>
+                        <li><span class="sp-num">9.</span> <span class="sp-name">Alfredo T. Sacayan</span></li>
+                        <li><span class="sp-num">10.</span> <span class="sp-name">Ronelo Alberto</span></li>
+                        <li><span class="sp-num">11.</span> <span class="sp-name">Leonorico Montepio</span></li>
+                        <li><span class="sp-num">12.</span> <span class="sp-name">Fernando E. Villarino</span></li>
+                        <li><span class="sp-num">13.</span> <span class="sp-name">Rolando J. Alberto</span></li>
+                        <li><span class="sp-num">14.</span> <span class="sp-name">Ronald Tan</span></li>
+                        <li><span class="sp-num">15.</span> <span class="sp-name">Wilfredo L. Delos Reyes</span></li>
+                      </ol>
+                    </div>
+
+                    <!-- Female Principal Sponsors -->
+                    <div class="entourage-col">
+                      <span class="role-badge female-badge">Female Sponsors</span>
+                      <ol class="sponsors-list">
+                        <li><span class="sp-num">1.</span> <span class="sp-name">Vivienne B. Deni-ay</span></li>
+                        <li><span class="sp-num">2.</span> <span class="sp-name">Belinda M. Mahilum</span></li>
+                        <li><span class="sp-num">3.</span> <span class="sp-name">Pinky J. Ruiz</span></li>
+                        <li><span class="sp-num">4.</span> <span class="sp-name">Ma Mae M. Oga-ob</span></li>
+                        <li><span class="sp-num">5.</span> <span class="sp-name">Kathleen P. Diano</span></li>
+                        <li><span class="sp-num">6.</span> <span class="sp-name">Stephany Gallego</span></li>
+                        <li><span class="sp-num">7.</span> <span class="sp-name">Lydia P. Caramihan</span></li>
+                        <li><span class="sp-num">8.</span> <span class="sp-name">Tersie S. Dolomente</span></li>
+                        <li><span class="sp-num">9.</span> <span class="sp-name">Rodelyn Bandiola</span></li>
+                        <li><span class="sp-num">10.</span> <span class="sp-name">Norlinda Uy</span></li>
+                        <li><span class="sp-num">11.</span> <span class="sp-name">Mara A. Gomez</span></li>
+                        <li><span class="sp-num">12.</span> <span class="sp-name">Josephine Dejerio</span></li>
+                        <li><span class="sp-num">13.</span> <span class="sp-name">Nestrillia Barquin</span></li>
+                        <li><span class="sp-num">14.</span> <span class="sp-name">Emiliana Herbolingo</span></li>
+                        <li><span class="sp-num">15.</span> <span class="sp-name">Elsie M. Villarino</span></li>
+                        <li><span class="sp-num">16.</span> <span class="sp-name">Jennifer R. Alberto</span></li>
+                        <li><span class="sp-num">17.</span> <span class="sp-name">Prescilla S. Montepio</span></li>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Secondary Sponsors & Attendants -->
+                <div class="entourage-block special-roles-block">
+                  <h3 class="entourage-heading"><i class="fa-solid fa-hands-holding-child"></i> ATTENDANTS &amp; SECONDARY SPONSORS</h3>
+
+                  <!-- Cord Sponsors -->
+                  <div class="special-role-group">
+                    <span class="sub-role-title"><i class="fa-solid fa-infinity"></i> To Bind into One (Cord)</span>
+                    <p class="role-names">1. Noe Sabandal &bull; 2. Lelet Sabandal</p>
+                  </div>
+
+                  <!-- 3 Bearers -->
+                  <div class="special-role-group">
+                    <span class="sub-role-title"><i class="fa-solid fa-ring"></i> Bearers</span>
+                    <div class="bearers-grid">
+                      <div class="bearer-item">
+                        <span class="bearer-name">Noah Sabandal</span>
+                        <span class="bearer-type"><i class="fa-solid fa-ring"></i> Ring Bearer</span>
+                      </div>
+                      <div class="bearer-item">
+                        <span class="bearer-name">Lorenz Sabandal</span>
+                        <span class="bearer-type"><i class="fa-solid fa-coins"></i> Aras Bearer</span>
+                      </div>
+                      <div class="bearer-item">
+                        <span class="bearer-name">Lance Hercules Caramihan</span>
+                        <span class="bearer-type"><i class="fa-solid fa-book-bible"></i> Bible Bearer</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 3 Flower Girls -->
+                  <div class="special-role-group">
+                    <span class="sub-role-title"><i class="fa-solid fa-seedling"></i> Flower Girls</span>
+                    <div class="flower-girls-grid">
+                      <span class="flower-girl-item">1. Criszame Barquin</span>
+                      <span class="flower-girl-item">2. Crisjane Barquin</span>
+                      <span class="flower-girl-item">3. Joy Deguinion</span>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Card Bottom Note -->
+              <div class="card-bottom-note">
+                <p class="reception-note"><i class="fa-solid fa-utensils"></i> Reception follows immediately after the celebration</p>
+                <p class="attire-tag">Formal / Semi-Formal Attire Requested</p>
+              </div>
+
+              <!-- Re-seal Button -->
+              <button class="reseal-btn" id="reseal-btn" title="Fold back into envelope">
+                <i class="fa-solid fa-arrow-rotate-left"></i> Re-seal Envelope
+              </button>
+            </div>
+            
+            <!-- Metallic Card Specular Glare Layer -->
+            <div class="card-glare" id="card-glare"></div>
+          </article>
+
+          <!-- Front Pocket Layers (creates depth pocket for the letter) -->
+          <div class="envelope-pocket-left"></div>
+          <div class="envelope-pocket-right"></div>
+          <div class="envelope-pocket-bottom"></div>
+
+          <!-- Top Folding Flap -->
+          <div class="envelope-flap" id="envelope-flap">
+            <div class="flap-foil-trim"></div>
+          </div>
+
+          <!-- Pearl Ivory Wax Seal Stamp (Matches reference photo) -->
+          <div class="wax-seal" id="wax-seal" role="button" tabindex="0" aria-label="Open wedding invitation">
+            <div class="wax-seal-outer">
+              <div class="wax-seal-inner">
+                <div class="monogram-emboss">
+                  <span class="monogram-char">G</span>
+                  <span class="monogram-amp">&amp;</span>
+                  <span class="monogram-char">M</span>
+                </div>
+              </div>
+            </div>
+            <div class="wax-seal-glow"></div>
+          </div>
+
+        </div> <!-- /envelope -->
+      </div> <!-- /envelope-wrapper -->
+
+      <!-- Editorial "CLICK TO OPEN" (Matches reference photo) -->
+      <div class="landing-footer" id="landing-footer">
+        <button class="click-to-open-btn" id="click-to-open-btn" type="button" aria-label="Click to open invitation">
+          <span>CLICK TO OPEN</span>
+        </button>
+      </div>
+
+    </div> <!-- /stage -->
+
+    <footer class="page-footer">
+      <p>With Love, Gisser & Marialyn • Formal Attire Requested</p>
+    </footer>
+
+  </main>
+
+  <!-- Interactive RSVP Modal -->
+  <div class="modal-backdrop" id="rsvp-modal">
+    <div class="modal-card">
+      <button class="modal-close" id="close-rsvp-btn" aria-label="Close RSVP Modal">&times;</button>
+      
+      <div class="modal-crest">
+        <i class="fa-solid fa-champagne-glasses"></i>
+      </div>
+      
+      <h2 class="modal-title">RSVP</h2>
+      <p class="modal-subtitle">Kindly respond by December 1, 2026</p>
+
+      <form id="rsvp-form" class="rsvp-form">
+        <div class="form-group">
+          <label for="guest-name">Full Name(s)</label>
+          <input type="text" id="guest-name" required placeholder="Lord & Lady Bridgerton">
+        </div>
+
+        <div class="form-group">
+          <label>Will You Attend?</label>
+          <div class="radio-group">
+            <label class="radio-card">
+              <input type="radio" name="attendance" value="accept" checked>
+              <div class="radio-visual">
+                <i class="fa-solid fa-check"></i>
+                <span>Joyfully Accepts</span>
+              </div>
+            </label>
+            <label class="radio-card">
+              <input type="radio" name="attendance" value="decline">
+              <div class="radio-visual">
+                <i class="fa-solid fa-xmark"></i>
+                <span>Regretfully Declines</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group" id="guests-count-group">
+          <label for="guest-count">Number of Guests Attending</label>
+          <select id="guest-count">
+            <option value="1">1 Person</option>
+            <option value="2" selected>2 Persons</option>
+            <option value="3">3 Persons</option>
+            <option value="4">4 Persons</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="dietary-notes">Dietary Restrictions or Special Wishes</label>
+          <textarea id="dietary-notes" rows="2" placeholder="Vegetarian, Gluten-free, or a warm wish for the couple..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-gold btn-block">
+          <span>Confirm Response</span>
+        </button>
+      </form>
+
+      <div class="rsvp-success-message" id="rsvp-success">
+        <div class="success-icon">✨</div>
+        <h3>Thank You!</h3>
+        <p>Your response has been warmly received. We cannot wait to celebrate this magical day with you!</p>
+        <button class="btn btn-outline" id="done-rsvp-btn">Close</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-notification" id="toast">
+    <i class="fa-solid fa-check"></i>
+    <span id="toast-text">Invitation link copied to clipboard!</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
